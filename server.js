@@ -1,13 +1,14 @@
 //require express && mongoose , cors 
 const express = require('express')
 const cors = require('cors')
-
+const dotenv = require('dotenv')
 /*--------------------------------- */
 const person = require('./models/person');
-const connectdb = require('./configuration/connectdb')
+const connectdb = require('./config/connectdb')
 const app = express()
+dotenv.config();
 //PORT
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 //connect to mongodb DB
 connectdb();
 
